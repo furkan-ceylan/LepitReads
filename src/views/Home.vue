@@ -33,7 +33,7 @@
               </div>
             </a>
           </div>
-          <h1 class="hero__title">
+          <h1 class="hero__title3">
             Easily find the <mark>books</mark><br />you are looking for
           </h1>
         </div>
@@ -443,6 +443,7 @@ export default {
 
 <style scoped>
 .iconMargin {
+  margin-top:1.2rem;
   margin-left: 10%;
   text-align: center;
   align-content: center;

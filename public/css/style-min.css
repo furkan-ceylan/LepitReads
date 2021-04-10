@@ -3915,9 +3915,14 @@ svg path {
 }
 
 .hero .hero__title {
-    margin-bottom: 1.625rem;
-    font-size: 2.25rem;
     line-height: 3rem;
+    
+    
+}
+
+.hero .hero__title3 {
+    line-height: 3rem;
+    padding-bottom:3rem;
     
 }
 .hero__title2 {
@@ -3945,7 +3950,10 @@ svg path {
     color: #6fb1f4;
     background: 0 0
 }
-
+.hero .hero__title3 mark {
+    color: #6fb1f4;
+    background: 0 0
+}
 .hero .btn--hero {
     position: absolute;
     bottom: 2rem;
