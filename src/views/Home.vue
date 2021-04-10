@@ -447,8 +447,7 @@ export default {
 
 <style scoped>
 .iconMargin {
-      margin-bottom: -2rem;
-
+  
   margin-left: 10%;
   text-align: center;
   align-content: center;
