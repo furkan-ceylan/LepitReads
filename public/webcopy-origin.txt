@@ -54,12 +54,12 @@ Uri: https://use.fontawesome.com/releases/v5.2.0/css/all.css
 File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\releases\v5.2.0\css\all.css
 Content Type: text/css
 
-Uri: https://rodhtml.neyberg.com/node_modules/bootstrap/dist/css/bootstrap-grid.min.css
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\bootstrap\dist\css\bootstrap-grid.min.css
+Uri: https://rodhtml.neyberg.com/nodem/bootstrap/dist/css/bootstrap-grid.min.css
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\bootstrap\dist\css\bootstrap-grid.min.css
 Content Type: text/css
 
-Uri: https://rodhtml.neyberg.com/node_modules/swiper/dist/css/swiper.min.css
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\swiper\dist\css\swiper.min.css
+Uri: https://rodhtml.neyberg.com/nodem/swiper/dist/css/swiper.min.css
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\swiper\dist\css\swiper.min.css
 Content Type: text/css
 
 Uri: https://rodhtml.neyberg.com/css/style-min.css
@@ -178,20 +178,20 @@ Uri: https://rodhtml.neyberg.com/images/sections/typing.jpg
 File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\images\sections\typing.jpg
 Content Type: image/jpeg
 
-Uri: https://rodhtml.neyberg.com/node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\smooth-scroll\dist\smooth-scroll.polyfills.min.js
+Uri: https://rodhtml.neyberg.com/nodem/smooth-scroll/dist/smooth-scroll.polyfills.min.js
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\smooth-scroll\dist\smooth-scroll.polyfills.min.js
 Content Type: application/javascript
 
-Uri: https://rodhtml.neyberg.com/node_modules/vanilla-lazyload/dist/lazyload.min.js
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\vanilla-lazyload\dist\lazyload.min.js
+Uri: https://rodhtml.neyberg.com/nodem/vanilla-lazyload/dist/lazyload.min.js
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\vanilla-lazyload\dist\lazyload.min.js
 Content Type: application/javascript
 
-Uri: https://rodhtml.neyberg.com/node_modules/swiper/dist/js/swiper.min.js
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\swiper\dist\js\swiper.min.js
+Uri: https://rodhtml.neyberg.com/nodem/swiper/dist/js/swiper.min.js
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\swiper\dist\js\swiper.min.js
 Content Type: application/javascript
 
-Uri: https://rodhtml.neyberg.com/node_modules/van11y-accessible-tab-panel-aria/dist/van11y-accessible-tab-panel-aria.min.js
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\van11y-accessible-tab-panel-aria\dist\van11y-accessible-tab-panel-aria.min.js
+Uri: https://rodhtml.neyberg.com/nodem/van11y-accessible-tab-panel-aria/dist/van11y-accessible-tab-panel-aria.min.js
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\van11y-accessible-tab-panel-aria\dist\van11y-accessible-tab-panel-aria.min.js
 Content Type: application/javascript
 
 Uri: https://rodhtml.neyberg.com/js/generic-min.js
@@ -274,8 +274,8 @@ Uri: https://rodhtml.neyberg.com/images/icons/arrow-top.svg
 File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\images\icons\arrow-top.svg
 Content Type: image/svg+xml
 
-Uri: https://rodhtml.neyberg.com/node_modules/masonry-layout/dist/masonry.pkgd.min.js
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\masonry-layout\dist\masonry.pkgd.min.js
+Uri: https://rodhtml.neyberg.com/nodem/masonry-layout/dist/masonry.pkgd.min.js
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\masonry-layout\dist\masonry.pkgd.min.js
 Content Type: application/javascript
 
 Uri: https://rodhtml.neyberg.com/js/blog-masonry-min.js
@@ -322,7 +322,7 @@ Uri: https://rodhtml.neyberg.com/images/sections/person-placeholder.jpg
 File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\images\sections\person-placeholder.jpg
 Content Type: image/jpeg
 
-Uri: https://rodhtml.neyberg.com/node_modules/van11y-accessible-accordion-aria/dist/van11y-accessible-accordion-aria.min.js
-File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\node_modules\van11y-accessible-accordion-aria\dist\van11y-accessible-accordion-aria.min.js
+Uri: https://rodhtml.neyberg.com/nodem/van11y-accessible-accordion-aria/dist/van11y-accessible-accordion-aria.min.js
+File Name: C:\Users\ceyla\OneDrive\Masaüstü\rod\rodhtml.neyberg.com\nodem\van11y-accessible-accordion-aria\dist\van11y-accessible-accordion-aria.min.js
 Content Type: application/javascript
 

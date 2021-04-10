@@ -37,8 +37,6 @@
             Easily find the <mark>books</mark><br />you are looking for
           </h1>
         </div>
-        <!-- hero call to action-->
-        <a class="btn btn--hero" href="#featured-slider" data-scroll=""></a>
       </div>
     </section>
     <section class="container">
@@ -224,20 +222,19 @@
 
       <section class="categories categories--large">
         <h3 class="hidden-heading">Suggestions</h3>
-            <a class="category category--standart" href="#">#Brandon Sanderson</a>
-            <a class="category category--standart" href="#">#Dostoyevski</a>
-            <a class="category category--standart" href="#">#Anna Karenina</a>
-            <a class="category category--standart" href="#">#War and Peace</a>
-            <a class="category category--standart" href="#">#George Orwell</a>
-            <a class="category category--standart" href="#">#Umberto Eco</a>
-            <a class="category category--standart" href="#">#Faust</a>
+        <a class="category category--standart" href="#">#Brandon Sanderson</a>
+        <a class="category category--standart" href="#">#Dostoyevski</a>
+        <a class="category category--standart" href="#">#Anna Karenina</a>
+        <a class="category category--standart" href="#">#War and Peace</a>
+        <a class="category category--standart" href="#">#George Orwell</a>
+        <a class="category category--standart" href="#">#Umberto Eco</a>
+        <a class="category category--standart" href="#">#Faust</a>
       </section>
 
       <section class="component">
         <!-- section heading-->
 
         <!-- section call to action-->
-
       </section>
 
       <section class="component">
@@ -341,7 +338,7 @@
           </div>
         </div>
       </section>
-      <FooterSection/>
+      <FooterSection />
     </section>
     <div class="search d-flex align-items-center justify-content-center">
       <div class="search__content">
@@ -395,7 +392,7 @@ export default {
     Header,
     SearchButton,
     BookResults,
-    FooterSection
+    FooterSection,
   },
   props: ["userInput"],
   data: function () {
@@ -447,7 +444,6 @@ export default {
 
 <style scoped>
 .iconMargin {
-  
   margin-left: 10%;
   text-align: center;
   align-content: center;
