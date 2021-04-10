@@ -17,12 +17,7 @@
               </router-link>
             </div>
             <div class="nav__item">
-              <router-link :to="{ name: 'About' }">
-                <a class="nav__link">Books</a>
-              </router-link>
-            </div>
-            <div class="nav__item">
-              <a class="nav__link" href="index.html">Profile</a>
+              <a class="nav__link" href="#">Profile</a>
             </div>
           </nav>
         </div>
@@ -134,7 +129,7 @@
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
                       </svg>
-                      <a class="media__area" href="single_post.html">
+                      <a class="media__area" href="#">
                         <img
                           class="lazy-sidebar"
                           src="images/assets/placeholder.png"
@@ -144,7 +139,7 @@
                       </a>
                     </div>
                     <!-- ~ article name-->
-                    <a class="card__name" href="single_post.html"
+                    <a class="card__name" href="#"
                       >Fast, delicious and easily prepared beverages to go</a
                     >
                   </div>
@@ -155,7 +150,7 @@
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
                       </svg>
-                      <a class="media__area" href="single_post.html">
+                      <a class="media__area" href="#">
                         <img
                           class="lazy-sidebar"
                           src="images/assets/placeholder.png"
@@ -165,7 +160,7 @@
                       </a>
                     </div>
                     <!-- ~ article name-->
-                    <a class="card__name" href="single_post.html"
+                    <a class="card__name" href="#"
                       >Perfect beverages to boost your day and increase
                       productivity</a
                     >
@@ -177,7 +172,7 @@
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
                       </svg>
-                      <a class="media__area" href="single_post.html">
+                      <a class="media__area" href="#">
                         <img
                           class="lazy-sidebar"
                           src="images/assets/placeholder.png"
@@ -187,7 +182,7 @@
                       </a>
                     </div>
                     <!-- ~ article name-->
-                    <a class="card__name" href="single_post.html"
+                    <a class="card__name" href="#"
                       >Special mood beverages: summer refreshing non-alcoholic
                       drinks</a
                     >
@@ -204,7 +199,7 @@
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
                       </svg>
-                      <a class="media__area" href="single_post.html">
+                      <a class="media__area" href="#">
                         <img
                           class="lazy-sidebar"
                           src="images/assets/placeholder.png"
@@ -214,7 +209,7 @@
                       </a>
                     </div>
                     <!-- ~ article name-->
-                    <a class="card__name" href="single_post.html"
+                    <a class="card__name" href="#"
                       >Perfect beverages to boost your day and increase
                       productivity</a
                     >
@@ -226,7 +221,7 @@
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
                       </svg>
-                      <a class="media__area" href="single_post.html">
+                      <a class="media__area" href="#">
                         <img
                           class="lazy-sidebar"
                           src="images/assets/placeholder.png"
@@ -236,7 +231,7 @@
                       </a>
                     </div>
                     <!-- ~ article name-->
-                    <a class="card__name" href="single_post.html"
+                    <a class="card__name" href="#"
                       >Special mood beverages: summer refreshing non-alcoholic
                       drinks</a
                     >
@@ -248,7 +243,7 @@
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
                       </svg>
-                      <a class="media__area" href="single_post.html">
+                      <a class="media__area" href="#">
                         <img
                           class="lazy-sidebar"
                           src="images/assets/placeholder.png"
@@ -258,7 +253,7 @@
                       </a>
                     </div>
                     <!-- ~ article name-->
-                    <a class="card__name" href="single_post.html"
+                    <a class="card__name" href="#"
                       >Fast, delicious and easily prepared beverages to go</a
                     >
                   </div>

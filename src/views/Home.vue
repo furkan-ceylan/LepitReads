@@ -202,7 +202,7 @@
                   <!-- ~ article content-->
                   <div class="card__content">
                     <div class="card__name">
-                      <a class="card__link" href="single_post.html"
+                      <a class="card__link" href="#"
                         >“Don’t walk in front of me… I may not follow Don’t walk
                         behind me… I may not lead Walk beside me… just be my
                         friend”</a
