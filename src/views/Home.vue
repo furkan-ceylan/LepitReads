@@ -56,7 +56,7 @@
               <!-- slide with featured article-->
               <div
                 class="swiper-slide"
-                data-title="The most popular and classical beverages of all time"
+                data-title="Oscar Wilde"
               >
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
@@ -96,7 +96,7 @@
               <!-- slide with featured article-->
               <div
                 class="swiper-slide"
-                data-title="Fast, delicious and easily prepared beverages to go"
+                data-title="Sude Camus"
               >
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
@@ -135,7 +135,7 @@
               <!-- slide with featured article-->
               <div
                 class="swiper-slide"
-                data-title="Special mood beverages: summer refreshing non-alcoholic drinks"
+                data-title="Mahatma Gandhi"
               >
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
@@ -174,7 +174,7 @@
               <!-- slide with featured article-->
               <div
                 class="swiper-slide"
-                data-title="Perfect beverages to boost your day and increase productivity"
+                data-title="Albert Camus"
               >
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
