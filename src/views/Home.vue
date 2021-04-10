@@ -46,7 +46,7 @@
         <!-- slider with last featured articles-->
         <div
           class="featured-slider-wrapper featured-slider--basic"
-          id="featured-slider"
+          
         >
           <div class="swiper-container featured-slider">
             <BookResults :input="input" :books="books" />
