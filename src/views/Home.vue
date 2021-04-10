@@ -125,11 +125,10 @@
                   <div class="card__content">
                     <div class="card__name">
                       <a class="card__link"
-                        >“Two things are infinite: the universe and human
-                        stupidity; and I'm not sure about the universe.”</a
+                        >“I Wish You Could See What I See.”</a
                       >
                     </div>
-                    <h1 class="hero__title2">Albert Einstein</h1>
+                    <h1 class="hero__title2">Sude Camus</h1>
                   </div>
                 </div>
               </div>
