@@ -96,7 +96,7 @@
               <!-- slide with featured article-->
               <div
                 class="swiper-slide"
-                data-title="Sude Camus"
+                data-title="Victor Hugo"
               >
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
@@ -125,10 +125,10 @@
                   <div class="card__content">
                     <div class="card__name">
                       <a class="card__link"
-                        >“I Wish You Could See What I See.”</a
+                        >“To learn to read is to light a fire; every syllable that is spelled out is a spark.”</a
                       >
                     </div>
-                    <h1 class="hero__title2">Sude Camus</h1>
+                    <h1 class="hero__title2">Victor Hugo</h1>
                   </div>
                 </div>
               </div>
