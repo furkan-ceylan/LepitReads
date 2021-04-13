@@ -1,7 +1,7 @@
 # lepitreads
 ## A Book Review App with Google Books API and Vue
-## Version 1.0
-## For now just the book search section is active
+### Version 1.0
+### For now just the book search section is active
 
 
 ## Project setup
