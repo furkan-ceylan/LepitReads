@@ -44,20 +44,14 @@
         <!-- section heading-->
 
         <!-- slider with last featured articles-->
-        <div
-          class="featured-slider-wrapper featured-slider--basic"
-          
-        >
+        <div class="featured-slider-wrapper featured-slider--basic">
           <div class="swiper-container featured-slider">
             <BookResults :input="input" :books="books" />
           </div>
           <div class="swiper-container featured-slider">
             <div class="swiper-wrapper">
               <!-- slide with featured article-->
-              <div
-                class="swiper-slide"
-                data-title="Oscar Wilde"
-              >
+              <div class="swiper-slide" data-title="Oscar Wilde">
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
                 >
@@ -94,10 +88,7 @@
                 </div>
               </div>
               <!-- slide with featured article-->
-              <div
-                class="swiper-slide"
-                data-title="Victor Hugo"
-              >
+              <div class="swiper-slide" data-title="Victor Hugo">
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
                 >
@@ -125,7 +116,8 @@
                   <div class="card__content">
                     <div class="card__name">
                       <a class="card__link"
-                        >“To learn to read is to light a fire; every syllable that is spelled out is a spark.”</a
+                        >“To learn to read is to light a fire; every syllable
+                        that is spelled out is a spark.”</a
                       >
                     </div>
                     <h1 class="hero__title2">Victor Hugo</h1>
@@ -133,10 +125,7 @@
                 </div>
               </div>
               <!-- slide with featured article-->
-              <div
-                class="swiper-slide"
-                data-title="Mahatma Gandhi"
-              >
+              <div class="swiper-slide" data-title="Mahatma Gandhi">
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
                 >
@@ -172,10 +161,7 @@
                 </div>
               </div>
               <!-- slide with featured article-->
-              <div
-                class="swiper-slide"
-                data-title="Albert Camus"
-              >
+              <div class="swiper-slide" data-title="Albert Camus">
                 <div
                   class="card--light card card--post card--absolute card--post-featured"
                 >
@@ -345,7 +331,7 @@
         <SearchButton
           :userInput="input"
           @changedValue="input = $event"
-          @submitValue="searchBooks"
+          @submitValue="fetchBooks"
           @inputCleared="input = $event"
         />
         <!-- search information-->
@@ -384,6 +370,7 @@ import Header from "../components/Header.vue";
 import SearchButton from "../components/SearchButton.vue";
 import BookResults from "../components/BookResults.vue";
 import FooterSection from "../components/FooterSection.vue";
+import axios from "axios";
 
 export default {
   name: "Home",
@@ -398,43 +385,17 @@ export default {
     return {
       input: "",
       books: [],
-      loading: false,
-      isTyping: false,
       title: "",
     };
   },
-  watch: {
-    input: function () {
-      this.isTyping = true;
-      let self = this;
-      setTimeout(function () {
-        self.isTyping = false;
-      }, 500);
-    },
-  },
   methods: {
-    searchBooks: function (event) {
-      this.loading = true;
-      let search = this.input;
-      let queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + search;
-      this.$http
-        .get(queryURL)
-        .then((data) => {
-          this.books = data.body.items;
-        })
-        .then(() => {
-          let elems = document.querySelectorAll(".carousel");
-          let instances = M.Carousel.init(elems);
-          this.loading = false;
+    fetchBooks() {
+      axios
+        .get(`https://www.googleapis.com/books/v1/volumes?q=${this.input}`)
+        .then((response) => {
+          console.log(response.data.items);
+          this.books = response.data.items;
           this.results = true;
-          console.log(this.results);
-        })
-        .catch((error) => {
-          this.loading = false;
-          console.log(error);
-          M.toast({
-            html: "Oops! Something went wrong!",
-          });
         });
     },
   },
@@ -442,11 +403,16 @@ export default {
 </script>
 
 <style scoped>
+
+
+@media screen and (min-width: 600px) {
 .iconMargin {
-  margin-top:1.2rem;
+  margin-top: 1.2rem;
   margin-left: 10%;
   text-align: center;
   align-content: center;
   justify-items: space-around;
 }
+}
+
 </style>
