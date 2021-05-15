@@ -21,7 +21,6 @@
             </div>
           </nav>
         </div>
-
         <!-- header controls-->
         <div class="controls">
           <!-- ~ burger menu toogle-->
@@ -78,12 +77,17 @@
                     <a class="nav__link">Home</a>
                   </router-link>
                 </div>
+                 <div class="nav__item">
+                  <router-link :to="{ name: 'Home' }">
+                    <a class="nav__link">Profile</a>
+                  </router-link>
+                </div>
                 <!-- ~ navigation item-->
               </nav>
             </div>
           </div>
           <!-- sidebar widget: categories-->
-          <div class="sidebar__section">
+          <!-- <div class="sidebar__section">
             <nav class="categories categories--small">
               <div class="category category--count">
                 <a class="category__name" href="#">Liquid</a
@@ -106,11 +110,11 @@
                 ><span class="category__number">144</span>
               </div>
             </nav>
-          </div>
+          </div> -->
           <!-- sidebar widget: latest/popular articles-->
-          <div class="sidebar__section">
+          <!-- <div class="sidebar__section">
             <div class="js-tabs">
-              <!-- tabs header-->
+         
               <ul class="js-tablist" data-hx="h2">
                 <li class="js-tablist__item">
                   <a class="js-tablist__link" href="#popular-posts">Popular</a>
@@ -119,12 +123,12 @@
                   <a class="js-tablist__link" href="#recent-posts">Recent</a>
                 </li>
               </ul>
-              <!-- tabs content-->
+       
               <div class="js-tabcontent" id="popular-posts">
                 <div class="post-list">
-                  <!-- tiny article preview-->
+              
                   <div class="card card--post-tiny d-flex align-items-center">
-                    <!-- ~ article media-->
+        
                     <div class="media flex-shrink-0">
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
@@ -138,14 +142,14 @@
                         />
                       </a>
                     </div>
-                    <!-- ~ article name-->
+           
                     <a class="card__name" href="#"
                       >Fast, delicious and easily prepared beverages to go</a
                     >
                   </div>
-                  <!-- tiny article preview-->
+           
                   <div class="card card--post-tiny d-flex align-items-center">
-                    <!-- ~ article media-->
+                
                     <div class="media flex-shrink-0">
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
@@ -159,15 +163,15 @@
                         />
                       </a>
                     </div>
-                    <!-- ~ article name-->
+         
                     <a class="card__name" href="#"
                       >Perfect beverages to boost your day and increase
                       productivity</a
                     >
                   </div>
-                  <!-- tiny article preview-->
+         
                   <div class="card card--post-tiny d-flex align-items-center">
-                    <!-- ~ article media-->
+              
                     <div class="media flex-shrink-0">
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
@@ -181,7 +185,7 @@
                         />
                       </a>
                     </div>
-                    <!-- ~ article name-->
+           
                     <a class="card__name" href="#"
                       >Special mood beverages: summer refreshing non-alcoholic
                       drinks</a
@@ -189,12 +193,12 @@
                   </div>
                 </div>
               </div>
-              <!-- tabs content-->
+       
               <div class="js-tabcontent" id="recent-posts">
                 <div class="post-list">
-                  <!-- tiny article preview-->
+              
                   <div class="card card--post-tiny d-flex align-items-center">
-                    <!-- ~ article media-->
+          
                     <div class="media flex-shrink-0">
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
@@ -208,15 +212,15 @@
                         />
                       </a>
                     </div>
-                    <!-- ~ article name-->
+              
                     <a class="card__name" href="#"
                       >Perfect beverages to boost your day and increase
                       productivity</a
                     >
                   </div>
-                  <!-- tiny article preview-->
+               
                   <div class="card card--post-tiny d-flex align-items-center">
-                    <!-- ~ article media-->
+                 
                     <div class="media flex-shrink-0">
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
@@ -230,15 +234,15 @@
                         />
                       </a>
                     </div>
-                    <!-- ~ article name-->
+                
                     <a class="card__name" href="#"
                       >Special mood beverages: summer refreshing non-alcoholic
                       drinks</a
                     >
                   </div>
-                  <!-- tiny article preview-->
+                 
                   <div class="card card--post-tiny d-flex align-items-center">
-                    <!-- ~ article media-->
+                  
                     <div class="media flex-shrink-0">
                       <svg class="image-placeholder" width="128" height="128">
                         <use xlink:href="#image-placeholder"></use>
@@ -252,7 +256,7 @@
                         />
                       </a>
                     </div>
-                    <!-- ~ article name-->
+            
                     <a class="card__name" href="#"
                       >Fast, delicious and easily prepared beverages to go</a
                     >
@@ -260,9 +264,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- sidebar widget: tags-->
-          <div class="sidebar__section">
+          <!-- <div class="sidebar__section">
             <div class="tags">
               <a class="tag" href="#">#Regular</a>
               <a class="tag" href="#">#Spicy</a>
@@ -273,7 +277,7 @@
               <a class="tag" href="#">#Smile</a>
               <a class="tag" href="#">#TopRating</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </aside>
