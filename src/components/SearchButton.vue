@@ -13,6 +13,7 @@
           id="search-field"
           :value="userInput"
           @input="valueChange"
+          @clear="clearInput"
           @keyup.enter="submitValue"
         />
         <label class="search__input-desctiption" for="search-field"
@@ -27,7 +28,7 @@
         type="submit"
         @click="submitValue"
       >
-        <svg class="icon icon--regular">
+        <svg class="icon icon--regular3">
           <use xlink:href="#icon-search"></use>
         </svg>
       </button>
@@ -52,9 +53,13 @@ export default {
     submitValue: function (event) {
       if (this.input == "") {
         console.log("nothing to search");
+        alert('Nothing to search.')
         return;
+      } else {
+
+        this.$emit("submitValue");
+        this.input = '';
       }
-      this.$emit("submitValue");
     },
     clearInput: function (event) {
       this.input = "";
@@ -64,5 +69,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
