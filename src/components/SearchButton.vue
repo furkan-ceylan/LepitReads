@@ -15,6 +15,7 @@
           @input="valueChange"
           @clear="clearInput"
           @keyup.enter="submitValue"
+
         />
         <label class="search__input-desctiption" for="search-field"
           >Please, type a book you want find</label
@@ -23,10 +24,9 @@
 
       <button
         class="close icon-holder"
-        href="#"
         data-target=".search"
         type="submit"
-        @click="submitValue"
+        @click="submitValue(); scroll();"
       >
         <svg class="icon icon--regular3">
           <use xlink:href="#icon-search"></use>
@@ -53,17 +53,19 @@ export default {
     submitValue: function (event) {
       if (this.input == "") {
         console.log("nothing to search");
-        alert('Nothing to search.')
         return;
       } else {
-
         this.$emit("submitValue");
-        this.input = '';
+        this.input = "";
       }
     },
     clearInput: function (event) {
       this.input = "";
       this.$emit("inputCleared", this.input);
+    },
+    scroll() {
+      const element = document.getElementById("bookresults");
+      element.scrollIntoView({ behavior: "smooth" });
     },
   },
 };
