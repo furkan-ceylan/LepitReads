@@ -28,13 +28,15 @@
                   params: {
                     id: book.id,
                     bookTitle: book.volumeInfo.title,
-                    bookAuthor: book.volumeInfo.authors[0],
                     bookImage: book.volumeInfo.imageLinks.thumbnail,
                     bookDescription: book.volumeInfo.description,
                     bookPage: book.volumeInfo.pageCount,
                     bookDate: book.volumeInfo.publishedDate,
                     bookPublisher: book.volumeInfo.publisher,
-                    bookLink: book.volumeInfo.canonicalVolumeLink
+                    bookLink: book.volumeInfo.canonicalVolumeLink,
+                    bookAuthor: book.volumeInfo.authors
+                      ? book.volumeInfo.authors[0]
+                      : 'undefined',
                   },
                 }"
               >
