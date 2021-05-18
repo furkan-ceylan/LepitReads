@@ -18,16 +18,16 @@
                 <a class="nav__link">Home</a>
               </router-link>
             </div>
-                <div class="nav__item" v-if="user">               
-                <div class="nav__item">
-                  <router-link :to="{ name: 'Home' }">
-                    <a class="nav__link">Profile</a>
-                  </router-link>
-                </div>
-                <div class="nav__item">
-                  <a class="nav__link" @click="handleClick">Logout</a>
-                </div>
-                </div>
+            <div class="nav__item" v-if="user">
+              <div class="nav__item">
+                <router-link :to="{ name: 'Home' }">
+                  <a class="nav__link">Profile</a>
+                </router-link>
+              </div>
+              <div class="nav__item">
+                <a class="nav__link" @click="handleClick">Logout</a>
+              </div>
+            </div>
             <div class="nav__item" v-else>
               <div class="nav__item">
                 <router-link :to="{ name: 'Login' }">
@@ -46,7 +46,7 @@
         <div class="controls">
           <!-- ~ burger menu toogle-->
           <div class="icon-holder">
-            <a class="switch" href="#" data-target=".sidebar">
+            <a class="switch" data-target=".sidebar">
               <svg class="icon icon--regular" width="32" height="32">
                 <use xlink:href="#icon-burger"></use>
               </svg>
@@ -67,7 +67,6 @@
           <!-- ~ search toggle-->
           <a
             class="search-toggle--nested search-toggle switch"
-            href="#"
             data-target=".search"
             data-related=".sidebar"
           >
@@ -76,7 +75,7 @@
             >Find Book
           </a>
           <!-- ~ close sidebar button-->
-          <a class="close icon-holder" href="#" data-target=".sidebar">
+          <a class="close icon-holder" data-target=".sidebar">
             <svg class="icon icon--regular" width="32" height="32">
               <use xlink:href="#icon-cross"></use>
             </svg>
@@ -98,15 +97,15 @@
                     <a class="nav__link">Home</a>
                   </router-link>
                 </div>
-                <div v-if="user">               
-                <div class="nav__item">
-                  <router-link :to="{ name: 'Home' }">
-                    <a class="nav__link">Profile</a>
-                  </router-link>
-                </div>
-                <div class="nav__item">
-                  <a class="nav__link" @click="handleClick">Logout</a>
-                </div>
+                <div v-if="user">
+                  <div class="nav__item">
+                    <router-link :to="{ name: 'Home' }">
+                      <a class="nav__link">Profile</a>
+                    </router-link>
+                  </div>
+                  <div class="nav__item">
+                    <a class="nav__link" @click="handleClick">Logout</a>
+                  </div>
                 </div>
                 <div v-else>
                   <div class="nav__item">
