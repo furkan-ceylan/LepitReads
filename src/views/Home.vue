@@ -22,10 +22,10 @@
               data-related=".sidebar"
             >
               <div class="hero__title">
-                  <svg class="icon icon--boldd">
-                    <use xlink:href="#icon-search"></use>
-                  </svg>
-                  <h4 class="hero__title1">Find Book</h4>
+                <svg class="icon icon--boldd">
+                  <use xlink:href="#icon-search"></use>
+                </svg>
+                <h4 class="hero__title1">Find Book</h4>
               </div>
             </a>
           </div>
@@ -40,7 +40,10 @@
         <!-- section heading-->
 
         <!-- slider with last featured articles-->
-        <div class="featured-slider-wrapper featured-slider--basic">
+        <div
+          class="featured-slider-wrapper featured-slider--basic"
+          id="bookresults"
+        >
           <div class="swiper-container featured-slider">
             <BookResults :input="input" :books="books" />
           </div>
@@ -184,7 +187,7 @@
                   <!-- ~ article content-->
                   <div class="card__content">
                     <div class="card__name">
-                      <a class="card__link" href="#"
+                      <a class="card__link"
                         >“Don’t walk in front of me… I may not follow Don’t walk
                         behind me… I may not lead Walk beside me… just be my
                         friend”</a
@@ -203,13 +206,13 @@
 
       <section class="categories categories--large">
         <h3 class="hidden-heading">Suggestions</h3>
-        <a class="category category--standart" href="#">#Brandon Sanderson</a>
-        <a class="category category--standart" href="#">#Dostoyevski</a>
-        <a class="category category--standart" href="#">#Anna Karenina</a>
-        <a class="category category--standart" href="#">#War and Peace</a>
-        <a class="category category--standart" href="#">#George Orwell</a>
-        <a class="category category--standart" href="#">#Umberto Eco</a>
-        <a class="category category--standart" href="#">#Faust</a>
+        <a class="category category--standart">#Brandon Sanderson</a>
+        <a class="category category--standart">#Dostoyevski</a>
+        <a class="category category--standart">#Anna Karenina</a>
+        <a class="category category--standart">#War and Peace</a>
+        <a class="category category--standart">#George Orwell</a>
+        <a class="category category--standart">#Umberto Eco</a>
+        <a class="category category--standart">#Faust</a>
       </section>
 
       <section class="component">
@@ -335,18 +338,18 @@
           <h3>May we suggest?</h3>
           <p>Follow good rules of writing and type specific word or phrase.</p>
           <div class="tags tags--follow">
-            <a class="tag" href="#">#Brandon Sanderson</a>
-            <a class="tag" href="#">#Dostoyevski</a>
-            <a class="tag" href="#">#Anna Karenina</a>
-            <a class="tag" href="#">#War and Peace</a>
-            <a class="tag" href="#">#George Orwell</a>
-            <a class="tag" href="#">#Umberto Eco</a>
-            <a class="tag" href="#">#Faust</a>
+            <a class="tag">#Brandon Sanderson</a>
+            <a class="tag">#Dostoyevski</a>
+            <a class="tag">#Anna Karenina</a>
+            <a class="tag">#War and Peace</a>
+            <a class="tag">#George Orwell</a>
+            <a class="tag">#Umberto Eco</a>
+            <a class="tag">#Faust</a>
           </div>
         </div>
       </div>
       <!-- dialog box close-->
-      <a class="close icon-holder" href="#" data-target=".search">
+      <a class="close icon-holder" data-target=".search">
         <svg class="icon icon--regular" width="32" height="32">
           <use xlink:href="#icon-cross"></use>
         </svg>
@@ -407,7 +410,7 @@ export default {
     align-content: center;
     justify-items: space-around;
   }
-  .hero__content:hover a:hover{
+  .hero__content:hover a:hover {
     color: #6fb1f4;
     cursor: pointer;
   }
