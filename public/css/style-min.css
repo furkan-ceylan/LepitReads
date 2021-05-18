@@ -2920,7 +2920,7 @@ svg path {
 }
 
 .overlay {
-    background: #0a0b13;
+    background: #6fb1f4;
     opacity: 0;
     z-index: 50;
     -webkit-transition: transform 640ms cubic-bezier(.455, .03, .515, .955), opacity 640ms cubic-bezier(.455, .03, .515, .955);
@@ -6720,14 +6720,7 @@ svg path {
     margin-bottom: .625rem
 }
 
-.card--post-info .card__metas {
-    font-size: 0
-}
 
-.card--post-info .card__meta {
-    display: none;
-    padding: 0
-}
 
 .card--post-info .card__meta-title {
     margin-bottom: .375rem
