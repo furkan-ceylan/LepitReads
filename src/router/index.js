@@ -1,61 +1,69 @@
-import { createRouter, createWebHistory, createWebHashHistory  } from 'vue-router';
-import Home from '../views/Home.vue'
-import Login from '../views/auth/Login.vue'
-import Signup from '../views/auth/Signup.vue'
-import test from '../views/test.vue'
-import BookDetail from '../views/BookDetail.vue'
-import {projectAuth} from '../firebase/config'
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+} from "vue-router";
+import Home from "../views/Home.vue";
+import Login from "../views/auth/Login.vue";
+import Signup from "../views/auth/Signup.vue";
+import test from "../views/test.vue";
+import BookDetail from "../views/BookDetail.vue";
+import { projectAuth } from "../firebase/config";
 
 const requireAuth = (to, from, next) => {
-  let user = projectAuth.currentUser
-  if(!user) {
-    next({ name: 'Login' })
+  let user = projectAuth.currentUser;
+  if (!user) {
+    next({ name: "Login" });
+  } else {
+    next();
   }
-  else {
-    next()
-  }
-}
+};
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
 
   {
-    path: '/login',
-    name: 'Login',
-    component: Login
+    path: "/login",
+    name: "Login",
+    component: Login,
   },
   {
-    path: '/signup',
-    name: 'Signup',
-    component: Signup
+    path: "/signup",
+    name: "Signup",
+    component: Signup,
   },
   {
-    path: '/test',
-    name: 'test',
-    component: test
+    path: "/test",
+    name: "test",
+    component: test,
   },
   {
-    path: '/bookdetail/:id',
-    name: 'BookDetail',
+    path: "/bookdetail/:id",
+    name: "BookDetail",
     component: BookDetail,
-    props: true
+    props: true,
   },
-  
+
   // {
   //   path: '/profile',
   //   name: 'Profile',
   //   component: Profile,
   //   beforeEnter: requireAuth
   // },
-]
+];
 
 const router = createRouter({
-  history: createWebHashHistory(process.env.BASE_URL),
-  routes
-})
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
 
-export default router
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 };
+  },
+});
+
+export default router;
