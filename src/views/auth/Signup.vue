@@ -17,7 +17,7 @@
       <fieldset class="form__group">
         <div class="row">
           <div class="col-md-3">
-            <label class="form__input-label" for="contact-name">e-mail</label>
+            <label class="form__input-label">e-mail</label>
           </div>
           <div class="col-md-6 col-lg-7">
             <input
@@ -56,14 +56,14 @@
       <fieldset class="form__group">
         <div class="row">
           <div class="col-md-3">
-            <label class="form__input-label" for="contact-name"
+            <label class="form__input-label" for="contact-displayname"
               >display name</label
             >
           </div>
           <div class="col-md-6 col-lg-7">
             <input
               class="form__input"
-              id="contact-name"
+              id="contact-displayname"
               type="text"
               placeholder="e.g. lepitreads"
               v-model="displayName"
@@ -88,6 +88,11 @@
           Loading
         </button>
       </fieldset>
+      <div class="col-md-8 col-lg-6" v-if="user">
+        <small class="form__input-desctiption">
+          you have already logged in</small
+        >
+      </div>
     </form>
   </div>
 </template>
@@ -96,6 +101,7 @@
 import Header from "@/components/Header.vue";
 import useSignup from "@/composables/useSignup.js";
 import { ref } from "vue";
+import getUser from "@/composables/getUser.js";
 
 export default {
   name: "Signup",
@@ -108,6 +114,7 @@ export default {
     const email = ref("");
     const password = ref("");
     const displayName = ref("");
+    const { user } = getUser();
 
     const handleSubmit = async () => {
       const res = await signup(email.value, password.value, displayName.value);
@@ -115,7 +122,15 @@ export default {
         console.log("user signed up");
       }
     };
-    return { email, password, displayName, handleSubmit, error, isPending };
+    return {
+      email,
+      password,
+      displayName,
+      handleSubmit,
+      error,
+      isPending,
+      user,
+    };
   },
 };
 </script>

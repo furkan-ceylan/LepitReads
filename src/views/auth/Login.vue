@@ -17,9 +17,7 @@
       <fieldset class="form__group">
         <div class="row">
           <div class="col-md-3">
-            <label class="form__input-label" for="contact-name"
-              >e-mail</label
-            >
+            <label class="form__input-label" for="contact-name">e-mail</label>
           </div>
           <div class="col-md-6 col-lg-7">
             <input
@@ -62,14 +60,20 @@
         <button
           v-if="isPending"
           class="btn btn--secondary isPendingButton"
-
           disabled
         >
           Loading
         </button>
       </fieldset>
-      <div class="col-md-4 col-lg-3" v-if="error">
-        <small class="form__input-desctiption"> e-mail or password is wrong</small>
+      <div class="col-md-8 col-lg-6" v-if="error">
+        <small class="form__input-desctiption">
+          e-mail or password is wrong</small
+        >
+      </div>
+      <div class="col-md-8 col-lg-6" v-if="user">
+        <small class="form__input-desctiption">
+          you have already logged in</small
+        >
       </div>
     </form>
   </div>
@@ -79,6 +83,7 @@
 import Header from "@/components/Header.vue";
 import useLogin from "@/composables/useLogin.js";
 import { ref } from "vue";
+import getUser from "@/composables/getUser.js";
 
 export default {
   name: "Login",
@@ -90,6 +95,7 @@ export default {
 
     const email = ref("");
     const password = ref("");
+    const { user } = getUser();
 
     const handleSubmit = async () => {
       const res = await login(email.value, password.value);
@@ -99,7 +105,7 @@ export default {
         console.log("login error");
       }
     };
-    return { email, password, handleSubmit, error, isPending };
+    return { email, password, handleSubmit, error, isPending, user };
   },
 };
 </script>
