@@ -17,19 +17,15 @@
           <div class="iconMargin">
             <a
               class="search-toggle--nested search-toggle switch"
-              href="#featured-slider"
               data-scroll=""
               data-target=".search"
               data-related=".sidebar"
             >
               <div class="hero__title">
-                <v-row>
                   <svg class="icon icon--boldd">
                     <use xlink:href="#icon-search"></use>
                   </svg>
-
                   <h4 class="hero__title1">Find Book</h4>
-                </v-row>
               </div>
             </a>
           </div>
@@ -403,16 +399,17 @@ export default {
 </script>
 
 <style scoped>
-
-
 @media screen and (min-width: 600px) {
-.iconMargin {
-  margin-top: 1.2rem;
-  margin-left: 10%;
-  text-align: center;
-  align-content: center;
-  justify-items: space-around;
+  .iconMargin {
+    margin-top: 1.2rem;
+    margin-left: 10%;
+    text-align: center;
+    align-content: center;
+    justify-items: space-around;
+  }
+  .hero__content:hover a:hover{
+    color: #6fb1f4;
+    cursor: pointer;
+  }
 }
-}
-
 </style>
