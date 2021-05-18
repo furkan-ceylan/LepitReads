@@ -6,8 +6,8 @@
       <!-- page title-->
       <div class="page-title">
         <div class="row">
-          <div class="col-md-5">
-            <h1 class="page-title__name">Book name</h1>
+          <div class="col-md-12">
+            <h1 class="page-title__name">{{bookTitle}}</h1>
           </div>
         </div>
       </div>
@@ -22,9 +22,9 @@
                 <svg class="image-placeholder" width="128" height="128">
                   <use xlink:href="#image-placeholder"></use>
                 </svg>
-                <a class="media__area" href="#">
+                <a class="media__area">
                   <img
-                    src="https://m.media-amazon.com/images/I/41gr3r3FSWL.jpg"
+                    :src="bookImage"
                     alt=""
                     data-sizes="(min-width: 36rem) 80vw, 100vw"
                   />
@@ -32,9 +32,9 @@
                 <!-- ~ article details-->
                 <div class="card__detail d-md-flex align-items-center">
                   <div class="card__reference">
-                    <span class="card__reference-value">Book name</span>
+                    <span class="card__reference-value">{{bookTitle}}</span>
                   </div>
-                  <a class="link link--cta" href="single_post.html">more</a>
+                  <a class="link link--cta" :href="bookLink">more</a>
                 </div>
               </div>
             </div>
@@ -43,23 +43,22 @@
               <ul class="card__metas list-unstyled">
                 <li class="card__meta">
                   <span class="card__meta-title">Author</span>
-                  <span class="card__meta-value">George Orwell</span>
+                  <span class="card__meta-value">{{bookAuthor}}</span>
                 </li>
                 <li class="card__meta">
                   <span class="card__meta-title">Published Date</span>
-                  <span class="card__meta-value">1984</span>
+                  <span class="card__meta-value">{{bookDate}}</span>
                 </li>
                 <li class="card__meta">
                   <span class="card__meta-title">Publisher</span>
-                  <span class="card__meta-value">Kitabevi</span>
+                  <span class="card__meta-value">{{bookPublisher}}</span>
                 </li>
                 <li class="card__meta">
                   <span class="card__meta-title">pageCount</span>
-                  <span class="card__meta-value">141</span>
+                  <span class="card__meta-value">{{bookPage}}</span>
                 </li>
                 <li class="card__meta">
-                  <span class="card__meta-title">Link</span>
-                  <a class="card__meta-value" href="person.html">Link2</a>
+                  <a class="card__meta-value" :href="bookLink">Go to book page</a>
                 </li>
               </ul>
             </div>
@@ -68,16 +67,12 @@
         <!-- ~ article content-->
         <div class="row">
           <div class="col-lg-6">
-            <a class="card__name" href="single_post.html">description</a>
+            
+            <h2 class="card__name">Description</h2>
           </div>
           <div class="col-lg-6">
             <p class="card__info">
-              Aliquam efficitur arcu ege. Nullam mollis velit mi, quis posuere
-              purus pellentesque eu. Consectetur efficitur aliquam efficitur
-              arcu eget nulla iaculis pharetra auctor nulla consectetur
-              efficitur. Nullam mollis velit mi, quis posuere purus pellentesque
-              eu. Consectetur efficitur aliquam efficitur arcu eget nulla
-              iaculis pharetra auctor.
+              {{bookDescription}}
             </p>
           </div>
         </div>
@@ -154,17 +149,19 @@
 
 <script>
 import Header from "@/components/Header.vue";
-
+Vue.prototype.$scrollToTop = () => window.scrollTo(0,0)
 export default {
+  
   name: "BookDetail",
   components: {
     Header,
   },
+  props: ['id','bookTitle','bookAuthor','bookDescription','bookDate','bookPage','bookPublisher','bookImage','bookLink'],
 };
 </script>
 
 <style scoped>
 .container {
-  padding-top: 74px;
+  padding-top: 94px;
 }
 </style>

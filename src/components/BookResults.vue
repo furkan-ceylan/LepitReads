@@ -1,8 +1,6 @@
 <template>
   <div class="book-results">
     <div v-if="books.length > 0">
-  
-
       <!-- search title-->
       <div class="page-title page-title--thin page-title--search">
         <h1>
@@ -24,14 +22,31 @@
               <svg class="image-placeholder" width="128" height="128">
                 <use xlink:href="#image-placeholder"></use>
               </svg>
-              <a class="media__area" href="#">
-                <img
-                  class="lazy"
-                  v-if="book.volumeInfo.imageLinks"
-                  :src="book.volumeInfo.imageLinks.thumbnail"
-                  data-sizes="(min-width: 36rem) 35vw, 100vw"
-                />
-              </a>
+              <router-link
+                :to="{
+                  name: 'BookDetail',
+                  params: {
+                    id: book.id,
+                    bookTitle: book.volumeInfo.title,
+                    bookAuthor: book.volumeInfo.authors[0],
+                    bookImage: book.volumeInfo.imageLinks.thumbnail,
+                    bookDescription: book.volumeInfo.description,
+                    bookPage: book.volumeInfo.pageCount,
+                    bookDate: book.volumeInfo.publishedDate,
+                    bookPublisher: book.volumeInfo.publisher,
+                    bookLink: book.volumeInfo.canonicalVolumeLink
+                  },
+                }"
+              >
+                <a class="media__area">
+                  <img
+                    class="lazy"
+                    v-if="book.volumeInfo.imageLinks"
+                    :src="book.volumeInfo.imageLinks.thumbnail"
+                    data-sizes="(min-width: 36rem) 35vw, 100vw"
+                  />
+                </a>
+              </router-link>
             </div>
             <!-- ~ article attributes-->
             <div class="card__meta">
