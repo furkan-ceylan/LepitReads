@@ -3,9 +3,11 @@
     <div class="container">
       <div class="header__inner">
         <!-- logo-->
-        <a class="logo logo--primary">
-          <h2 class="heading__name">LepitReads</h2>
-        </a>
+        <router-link :to="{ name: 'Home' }">
+          <a class="logo logo--primary">
+            <h2 class="heading__name">LepitReads</h2>
+          </a>
+        </router-link>
 
         <!-- primary navigation-->
         <div class="d-none d-lg-block">
@@ -16,8 +18,27 @@
                 <a class="nav__link">Home</a>
               </router-link>
             </div>
-            <div class="nav__item">
-              <a class="nav__link" href="#">Profile</a>
+                <div class="nav__item" v-if="user">               
+                <div class="nav__item">
+                  <router-link :to="{ name: 'Home' }">
+                    <a class="nav__link">Profile</a>
+                  </router-link>
+                </div>
+                <div class="nav__item">
+                  <a class="nav__link" @click="handleClick">Logout</a>
+                </div>
+                </div>
+            <div class="nav__item" v-else>
+              <div class="nav__item">
+                <router-link :to="{ name: 'Login' }">
+                  <a class="nav__link">Login</a>
+                </router-link>
+              </div>
+              <div class="nav__item">
+                <router-link :to="{ name: 'Signup' }">
+                  <a class="nav__link">Signup</a>
+                </router-link>
+              </div>
             </div>
           </nav>
         </div>
@@ -77,11 +98,29 @@
                     <a class="nav__link">Home</a>
                   </router-link>
                 </div>
-                 <div class="nav__item">
+                <div v-if="user">               
+                <div class="nav__item">
                   <router-link :to="{ name: 'Home' }">
                     <a class="nav__link">Profile</a>
                   </router-link>
                 </div>
+                <div class="nav__item">
+                  <a class="nav__link" @click="handleClick">Logout</a>
+                </div>
+                </div>
+                <div v-else>
+                  <div class="nav__item">
+                    <router-link :to="{ name: 'Login' }">
+                      <a class="nav__link">Login</a>
+                    </router-link>
+                  </div>
+                  <div class="nav__item">
+                    <router-link :to="{ name: 'Signup' }">
+                      <a class="nav__link">Signup</a>
+                    </router-link>
+                  </div>
+                </div>
+
                 <!-- ~ navigation item-->
               </nav>
             </div>
@@ -286,10 +325,39 @@
 </template>
 
 <script>
+import useLogout from "@/composables/useLogout.js";
+import getUser from "@/composables/getUser.js";
+import { useRouter } from "vue-router";
+
 export default {
   name: "Header",
+
+  setup() {
+    const { logout } = useLogout();
+    const { user } = getUser();
+    const router = useRouter();
+
+    const handleClick = async () => {
+      await logout();
+      console.log("current user logged out");
+      router.push({ name: "Login" });
+    };
+
+    return { handleClick, user };
+  },
 };
 </script>
 
-<style>
+<style scoped>
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  color: black;
+}
+
+.nav__link {
+  cursor: pointer;
+}
 </style>
