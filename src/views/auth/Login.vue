@@ -72,7 +72,7 @@
       </div>
       <div class="col-md-8 col-lg-6" v-if="user">
         <small class="form__input-desctiption">
-          you have already logged in</small
+          You have logged in</small
         >
       </div>
     </form>
