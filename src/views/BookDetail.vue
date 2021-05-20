@@ -58,9 +58,7 @@
                   <span class="card__meta-value">{{ bookPage }}</span>
                 </li>
                 <li class="card__meta">
-                  <a class="card__meta-value" :href="bookLink"
-                    >Go to book page</a
-                  >
+                  <a class="card__meta-value" :href="bookLink">Buy this book</a>
                 </li>
               </ul>
             </div>
@@ -77,10 +75,13 @@
             </p>
           </div>
         </div>
-        <div class="row content-section content-section--static">
+        <div
+          class="row content-section content-section--static"
+          v-if="requireAuth"
+        >
           <div class="col-md-3">
             <!-- content heading-->
-            <h3 class="page-segment heading-section">
+            <h2 class="page-segment heading-section">
               Add this book<span class="heading-section__info"></span>
               <a
                 class="heading-section__control section-toggle"
@@ -102,7 +103,7 @@
                   <use xlink:href="#icon-minus"></use>
                 </svg>
               </a>
-            </h3>
+            </h2>
           </div>
           <div class="col-md-9 content-section__body">
             <!-- review item call to actions-->
@@ -110,8 +111,10 @@
               <div
                 class="reference__item d-lg-flex align-items-lg-center justify-content-lg-between"
               >
-                <span class="reference__label">add to favorites</span>
-                <a class="flex-shrink-0 reference__btn" target="_blank">add</a>
+                <span class="reference__label">Add to favorites</span>
+                <button class="flex-shrink-0 reference__btn" @click="handleFav">
+                  Add
+                </button>
                 <svg class="icon icon--regular" width="32" height="32">
                   <use xlink:href="#icon-arrow"></use>
                 </svg>
@@ -119,8 +122,13 @@
               <div
                 class="reference__item d-lg-flex align-items-lg-center justify-content-lg-between"
               >
-                <span class="reference__label">add to i want to read</span>
-                <a class="flex-shrink-0 reference__btn" target="_blank">add</a>
+                <span class="reference__label">Add to i want to read</span>
+                <button
+                  class="flex-shrink-0 reference__btn"
+                  @click="handleWillRead"
+                >
+                  Add
+                </button>
                 <svg class="icon icon--regular" width="32" height="32">
                   <use xlink:href="#icon-arrow"></use>
                 </svg>
@@ -128,8 +136,13 @@
               <div
                 class="reference__item d-lg-flex align-items-lg-center justify-content-lg-between"
               >
-                <span class="reference__label">add to a alread read</span>
-                <a class="flex-shrink-0 reference__btn" target="_blank">add</a>
+                <span class="reference__label">Add to a alread read</span>
+                <button
+                  class="flex-shrink-0 reference__btn"
+                  @click="handleRead"
+                >
+                  Add
+                </button>
                 <svg class="icon icon--regular" width="32" height="32">
                   <use xlink:href="#icon-arrow"></use>
                 </svg>
@@ -144,6 +157,12 @@
 
 <script>
 import Header from "@/components/Header.vue";
+import { projectAuth } from "../firebase/config";
+import { ref, reactive } from "vue";
+import useCollection from "@/composables/useCollection.js";
+import getUser from "@/composables/getUser.js";
+import { timestamp } from "@/firebase/config";
+import createBookList from "@/firebase/config";
 
 export default {
   name: "BookDetail",
@@ -161,6 +180,86 @@ export default {
     "bookImage",
     "bookLink",
   ],
+
+  setup(props) {
+    const { user } = getUser();
+    const { error, addDoc } = useCollection("books");
+    const isPending = ref(false);
+
+    const handleRead = async () => {
+      isPending.value = true;
+      await addDoc({
+        title: props.bookTitle,
+        author: props.bookAuthor,
+        userId: user.value.uid,
+        userName: user.value.displayName,
+        isFav: false,
+        isRead: true,
+        isWillRead: false,
+        createdAt: timestamp(),
+      });
+      isPending.value = false;
+      if (!error.value) {
+        console.log("book read added");
+      } else {
+        console.log("error");
+      }
+    };
+
+    const handleFav = async () => {
+      isPending.value = true;
+      await addDoc({
+        title: props.bookTitle,
+        author: props.bookAuthor,
+        userId: user.value.uid,
+        userName: user.value.displayName,
+        isFav: true,
+        isRead: false,
+        isWillRead: false,
+        createdAt: timestamp(),
+      });
+      isPending.value = false;
+      if (!error.value) {
+        console.log("book read added");
+      } else {
+        console.log("error");
+      }
+    };
+
+    const handleWillRead = async () => {
+      isPending.value = true;
+      await addDoc({
+        title: props.bookTitle,
+        author: props.bookAuthor,
+        userId: user.value.uid,
+        userName: user.value.displayName,
+        isFav: false,
+        isRead: false,
+        isWillRead: true,
+        createdAt: timestamp(),
+      });
+      isPending.value = false;
+      if (!error.value) {
+        console.log("book read added");
+      } else {
+        console.log("error");
+      }
+    };
+
+    return { handleFav, handleWillRead, handleRead, isPending };
+  },
+  computed: {
+    requireAuth() {
+      let user = projectAuth.currentUser;
+      if (!user) {
+        // console.log("dont show");
+        return false;
+      } else {
+        // console.log("show");
+        return true;
+      }
+    },
+  },
 };
 </script>
 
