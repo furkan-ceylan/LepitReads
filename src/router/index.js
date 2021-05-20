@@ -8,6 +8,8 @@ import Login from "../views/auth/Login.vue";
 import Signup from "../views/auth/Signup.vue";
 import test from "../views/test.vue";
 import BookDetail from "../views/BookDetail.vue";
+import Profile from "../views/Profile.vue";
+
 import { projectAuth } from "../firebase/config";
 
 const requireAuth = (to, from, next) => {
@@ -40,6 +42,11 @@ const routes = [
     path: "/test",
     name: "test",
     component: test,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
   },
   {
     path: "/bookdetail/:id",
