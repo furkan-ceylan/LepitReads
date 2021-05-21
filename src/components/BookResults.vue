@@ -26,14 +26,28 @@
                 :to="{
                   name: 'BookDetail',
                   params: {
-                    id: book.id,
-                    bookTitle: book.volumeInfo.title,
-                    bookImage: book.volumeInfo.imageLinks.thumbnail,
-                    bookDescription: book.volumeInfo.description,
-                    bookPage: book.volumeInfo.pageCount,
-                    bookDate: book.volumeInfo.publishedDate,
-                    bookPublisher: book.volumeInfo.publisher,
-                    bookLink: book.volumeInfo.canonicalVolumeLink,
+                    id: book.id ? book.id : '',
+                    bookTitle: book.volumeInfo.title
+                      ? book.volumeInfo.title
+                      : '',
+                    bookImage: book.volumeInfo.imageLinks
+                      ? book.volumeInfo.imageLinks.thumbnail
+                      : '',
+                    bookDescription: book.volumeInfo.description
+                      ? book.volumeInfo.description
+                      : '-',
+                    bookPage: book.volumeInfo.pageCount
+                      ? book.volumeInfo.pageCount
+                      : '-',
+                    bookDate: book.volumeInfo.publishedDate
+                      ? book.volumeInfo.publishedDate
+                      : '-',
+                    bookPublisher: book.volumeInfo.publisher
+                      ? book.volumeInfo.publisher
+                      : '-',
+                    bookLink: book.volumeInfo.canonicalVolumeLink
+                      ? book.volumeInfo.canonicalVolumeLink
+                      : '-',
                     bookAuthor: book.volumeInfo.authors
                       ? book.volumeInfo.authors[0]
                       : 'undefined',
