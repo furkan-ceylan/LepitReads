@@ -112,8 +112,19 @@
                 class="reference__item d-lg-flex align-items-lg-center justify-content-lg-between"
               >
                 <span class="reference__label">Add to favorites</span>
-                <button class="flex-shrink-0 reference__btn" @click="handleFav">
+                <button
+                  class="flex-shrink-0 reference__btn"
+                  @click="handleFav"
+                  v-if="!favAdded"
+                >
                   Add
+                </button>
+                <button
+                  class="flex-shrink-0 reference__btn disabledButton"
+                  v-else
+                  disabled
+                >
+                  Added
                 </button>
                 <svg class="icon icon--regular" width="32" height="32">
                   <use xlink:href="#icon-arrow"></use>
@@ -126,8 +137,16 @@
                 <button
                   class="flex-shrink-0 reference__btn"
                   @click="handleWillRead"
+                  v-if="!willReadAdded"
                 >
                   Add
+                </button>
+                <button
+                  class="flex-shrink-0 reference__btn disabledButton"
+                  v-else
+                  disabled
+                >
+                  Added
                 </button>
                 <svg class="icon icon--regular" width="32" height="32">
                   <use xlink:href="#icon-arrow"></use>
@@ -136,12 +155,20 @@
               <div
                 class="reference__item d-lg-flex align-items-lg-center justify-content-lg-between"
               >
-                <span class="reference__label">Add to a alread read</span>
+                <span class="reference__label">Add to i have already read</span>
                 <button
                   class="flex-shrink-0 reference__btn"
                   @click="handleRead"
+                  v-if="!readAdded"
                 >
                   Add
+                </button>
+                <button
+                  class="flex-shrink-0 reference__btn disabledButton"
+                  v-else
+                  disabled
+                >
+                  Added
                 </button>
                 <svg class="icon icon--regular" width="32" height="32">
                   <use xlink:href="#icon-arrow"></use>
@@ -158,11 +185,10 @@
 <script>
 import Header from "@/components/Header.vue";
 import { projectAuth } from "../firebase/config";
-import { ref, reactive } from "vue";
+import { ref } from "vue";
 import useCollection from "@/composables/useCollection.js";
 import getUser from "@/composables/getUser.js";
 import { timestamp } from "@/firebase/config";
-import createBookList from "@/firebase/config";
 
 export default {
   name: "BookDetail",
@@ -185,29 +211,14 @@ export default {
     const { user } = getUser();
     const { error, addDoc } = useCollection("books");
     const isPending = ref(false);
+    const favAdded = ref(false);
+    const readAdded = ref(false);
+    const willReadAdded = ref(false);
 
-    const handleRead = async () => {
-      isPending.value = true;
-      await addDoc({
-        title: props.bookTitle,
-        author: props.bookAuthor,
-        userId: user.value.uid,
-        userName: user.value.displayName,
-        isFav: false,
-        isRead: true,
-        isWillRead: false,
-        createdAt: timestamp(),
-      });
-      isPending.value = false;
-      if (!error.value) {
-        console.log("book read added");
-      } else {
-        console.log("error");
-      }
-    };
 
     const handleFav = async () => {
       isPending.value = true;
+      favAdded.value = true;
       await addDoc({
         title: props.bookTitle,
         author: props.bookAuthor,
@@ -218,6 +229,7 @@ export default {
         isWillRead: false,
         createdAt: timestamp(),
       });
+
       isPending.value = false;
       if (!error.value) {
         console.log("book read added");
@@ -228,6 +240,7 @@ export default {
 
     const handleWillRead = async () => {
       isPending.value = true;
+      willReadAdded.value = true;
       await addDoc({
         title: props.bookTitle,
         author: props.bookAuthor,
@@ -245,8 +258,29 @@ export default {
         console.log("error");
       }
     };
+    const handleRead = async () => {
+      isPending.value = true;
+      readAdded.value = true;
+      await addDoc({
+        title: props.bookTitle,
+        author: props.bookAuthor,
+        userId: user.value.uid,
+        userName: user.value.displayName,
+        isFav: false,
+        isRead: true,
+        isWillRead: false,
+        createdAt: timestamp(),
+      });
+      isPending.value = false;
+      added.value = true;
+      if (!error.value) {
+        console.log("book read added");
+      } else {
+        console.log("error");
+      }
+    };
 
-    return { handleFav, handleWillRead, handleRead, isPending };
+    return { handleFav, handleWillRead, handleRead, isPending, readAdded, favAdded, willReadAdded};
   },
   computed: {
     requireAuth() {
@@ -266,5 +300,8 @@ export default {
 <style scoped>
 .container {
   padding-top: 94px;
+}
+.disabledButton {
+  background: white;
 }
 </style>
