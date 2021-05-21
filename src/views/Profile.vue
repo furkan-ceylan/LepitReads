@@ -19,6 +19,7 @@
               <div class="media__area">
                 <img
                   class="lazy"
+                  width="350" height="350"
                   src="https://data.whicdn.com/images/336647128/original.jpg"
                 />
               </div>
