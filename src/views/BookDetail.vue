@@ -54,7 +54,7 @@
                   <span class="card__meta-value">{{ bookPublisher }}</span>
                 </li>
                 <li class="card__meta">
-                  <span class="card__meta-title">pageCount</span>
+                  <span class="card__meta-title">Number of pages</span>
                   <span class="card__meta-value">{{ bookPage }}</span>
                 </li>
                 <li class="card__meta">
