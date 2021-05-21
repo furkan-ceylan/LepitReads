@@ -20,34 +20,3 @@ const projectAuth = firebase.auth();
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
 export { projectFirestore, projectAuth, timestamp };
-
-//create doc
-
-// const db = firebase.firestore();
-// const booksCollection = db.collection("books");
-
-// export const createBookList = (book) => {
-//   return booksCollection.add(book);
-// };
-
-// export const getBook = async (id) => {
-//   const book = await booksCollection.doc(id).get();
-//   return book.exists ? book.data() : null;
-// };
-
-// export const updateBook = (id, book) => {
-//   return booksCollection.doc(id).update(book);
-// };
-
-// export const deleteBook = (id) => {
-//   return booksCollection.doc(id).delete();
-// };
-
-// export const useLoadBook = () => {
-//   const books = ref([]);
-//   const close = booksCollection.onSnapshot((snapshot) => {
-//     books.value = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-//   });
-//   onUnmounted(close);
-//   return books;
-// };
