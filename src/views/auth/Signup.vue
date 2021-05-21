@@ -102,6 +102,7 @@ import Header from "@/components/Header.vue";
 import useSignup from "@/composables/useSignup.js";
 import { ref } from "vue";
 import getUser from "@/composables/getUser.js";
+import { useRouter } from "vue-router";
 
 export default {
   name: "Signup",
@@ -115,11 +116,13 @@ export default {
     const password = ref("");
     const displayName = ref("");
     const { user } = getUser();
+    const router = useRouter()
 
     const handleSubmit = async () => {
       const res = await signup(email.value, password.value, displayName.value);
       if (!error.value) {
         console.log("user signed up");
+        router.push({ name: 'Profile' });
       }
     };
     return {

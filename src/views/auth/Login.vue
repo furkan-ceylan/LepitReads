@@ -84,6 +84,8 @@ import Header from "@/components/Header.vue";
 import useLogin from "@/composables/useLogin.js";
 import { ref } from "vue";
 import getUser from "@/composables/getUser.js";
+import { useRouter } from "vue-router";
+
 
 export default {
   name: "Login",
@@ -96,11 +98,13 @@ export default {
     const email = ref("");
     const password = ref("");
     const { user } = getUser();
+    const router = useRouter()
 
     const handleSubmit = async () => {
       const res = await login(email.value, password.value);
       if (!error.value) {
         console.log("logged in");
+        router.push({ name: 'Profile' });
       } else {
         console.log("login error");
       }
