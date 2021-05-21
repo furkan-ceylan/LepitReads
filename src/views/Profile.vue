@@ -19,7 +19,7 @@
               <div class="media__area">
                 <img
                   class="lazy"
-                  src="https://productimages.hepsiburada.net/s/37/375/10555788460082.jpg"
+                  src="https://data.whicdn.com/images/336647128/original.jpg"
                 />
               </div>
             </div>
