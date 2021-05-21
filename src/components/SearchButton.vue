@@ -15,7 +15,6 @@
           @input="valueChange"
           @clear="clearInput"
           @keyup.enter="submitValue"
-
         />
         <label class="search__input-desctiption" for="search-field"
           >Please, type a book you want find</label
@@ -26,7 +25,10 @@
         class="close icon-holder"
         data-target=".search"
         type="submit"
-        @click="submitValue(); scroll();"
+        @click="
+          submitValue();
+          scroll();
+        "
       >
         <svg class="icon icon--regular3">
           <use xlink:href="#icon-search"></use>
