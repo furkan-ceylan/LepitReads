@@ -6,7 +6,6 @@ import {
 import Home from "../views/Home.vue";
 import Login from "../views/auth/Login.vue";
 import Signup from "../views/auth/Signup.vue";
-import test from "../views/test.vue";
 import BookDetail from "../views/BookDetail.vue";
 import Profile from "../views/Profile.vue";
 
