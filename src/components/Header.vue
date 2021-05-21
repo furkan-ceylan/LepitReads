@@ -20,7 +20,7 @@
             </div>
             <div class="nav__item" v-if="user">
               <div class="nav__item">
-                <router-link :to="{ name: 'Home' }">
+                <router-link :to="{ name: 'Profile' }">
                   <a class="nav__link">Profile</a>
                 </router-link>
               </div>
@@ -99,7 +99,7 @@
                 </div>
                 <div v-if="user">
                   <div class="nav__item">
-                    <router-link :to="{ name: 'Home' }">
+                    <router-link :to="{ name: 'Profile' }">
                       <a class="nav__link">Profile</a>
                     </router-link>
                   </div>
