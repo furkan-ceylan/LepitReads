@@ -44,9 +44,10 @@ const routes = [
     component: test,
   },
   {
-    path: "/profile",
+    path: "/profile/user",
     name: "Profile",
     component: Profile,
+    beforeEnter: requireAuth,
   },
   {
     path: "/bookdetail/:id",
