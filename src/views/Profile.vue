@@ -20,7 +20,7 @@
                 <img
                   class="lazy"
                   width="350" height="350"
-                  src="https://data.whicdn.com/images/336647128/original.jpg"
+                  src="https://i1.sndcdn.com/artworks-J2za3PLCmOxJpGhk-um7XQA-t500x500.jpg"
                 />
               </div>
             </div>
